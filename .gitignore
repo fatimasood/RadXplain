@@ -216,3 +216,12 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Allow project data files
+!data/*.csv
+!data/*.json
+!data/*.yaml
+!models/*.pt
+!results/*.png
+!results/*.jpg
+!results/*.csv
