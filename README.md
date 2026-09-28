@@ -39,6 +39,14 @@ afterthought.
   endpoint is available at /predict on the same Space for programmatic
   access.
 
+  <img width="981" height="392" alt="image" src="https://github.com/user-attachments/assets/954beb9d-2383-4c12-a043-b23237762215" />
+
+The three panels show, from left to right: the original chest X-ray, the
+EigenCAM heatmap highlighting the regions the model attended to, and the
+final detections with class labels and confidence scores. In this example
+the model detects aortic enlargement (0.68) and pulmonary fibrosis
+(0.31-0.55) across both lungs.
+
 ## Dataset
 
 VinDr-CXR / VinBigData Chest X-ray Abnormalities Detection:
@@ -96,27 +104,6 @@ robustly. Small, subtle, or ambiguous findings remain challenging even at
 1024x1024 resolution. This is consistent with what the broader medical
 imaging literature reports, and is treated here as a documented limitation
 rather than something the model has solved.
-
-## Repository structure
-
-    RadXplain/
-    ├── data/
-    │   ├── fused_annotations.csv         WBF-fused ground truth
-    │   ├── filtered_annotations.csv      8 selected classes
-    │   ├── splits.json                   train/val/test split
-    │   └── dataset.yaml                  YOLO config
-    ├── models/
-    │   ├── best.pt                       PyTorch weights (for EigenCAM)
-    │   └── best.onnx                     ONNX weights (for inference)
-    ├── results/
-    │   ├── results.csv                   training metrics per epoch
-    │   ├── results.png                   loss and mAP curves
-    │   ├── confusion_matrix.png
-    │   └── val_batch0_pred.jpg           sample predictions
-    └── deployment/
-        ├── app.py                        Gradio application
-        ├── requirements.txt
-        └── README.md                     Hugging Face Spaces config
 
 ## Reproducing
 
